@@ -31,5 +31,5 @@ module.exports = function (app) {
     updatedAt: { type: Date, default: Date.now }
   });
 
-  return mongooseClient.model('games', games);
+  return mongooseClient.model('games', gamesSchema);
 };
