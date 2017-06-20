@@ -5,5 +5,31 @@
   "paginate": {
     "default": 10,
     "max": 50
+  },
+  "mongodb": "mongodb://localhost:27017/othello",
+  "authentication": {
+    "secret": "a25b6cc4df0d53faa58d30a82701befb3a22cddbf66431f15f9f6ed5811e43ac59e66b7f9fe0ab58c99bc8176dffd721d2de309a343d9e8ee290b4b088bec197d1c018b64b97e91e3ce8300dfea805a12edc4be5c3b9c7821cd4b39ad0bc9d07016d716cd93df7b34574a233ffdbe55cec3ceaa1d8416f6ae0727acb842ab471fe46368b7b43b06044595796be13b57aad3c2a773350a08dbd73677e8bdb405ee163c01378a32b28f1f8b486b6a29796254f3aa11d361a86052c28c6d800557840b252a33155be6c3a4dcffa2b32457c51ace33a2be265c009b012a1ed6d559185501b3ed2aa4cfb8321ce946a7456dc9b1bad3e57714cfacde02fb7d5cb8ae3",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "service": "users",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
   }
 }
