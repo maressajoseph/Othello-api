@@ -7,14 +7,15 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
     // that resolves with the `hook` object for asynchronous operations
     console.log(hook.data)
     console.log(hook.data.players)
+    console.log(hook.params)
 
     defineColor = () => {
-      if (hook.data.players === []) { return true }
+      if (hook.data.players === undefined) { return true }
       else { return false }
     }
 
     createBoard = () => {
-      hooks.data.board = [[{
+      [[{
         box: undefined,
         row: 1,
         column: 1
@@ -336,7 +337,7 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
       }]]
     }
 
-    const { user } = hooks.params
+    const { user } = hook.params
     const game = {
       userId: user._id,
       players: [{
