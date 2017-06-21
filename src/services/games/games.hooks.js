@@ -26,7 +26,7 @@ module.exports = {
     create: [
       authenticate('jwt'),
       restrictToAuthenticated(),
-      associateCurrentUser({ as: 'authorId' }),
+      associateCurrentUser({ as: 'userId' }),
       createGame()
     ],
     update: [...restrict],

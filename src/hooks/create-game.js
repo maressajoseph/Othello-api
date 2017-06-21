@@ -7,6 +7,7 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
     // that resolves with the `hook` object for asynchronous operations
     console.log(hook.data)
     console.log(hook.data.players)
+    console.log(hook.data.board)
     console.log(hook.params)
 
     defineColor = () => {
@@ -15,7 +16,7 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
     }
 
     createBoard = () => {
-      [[{
+      return [{
         box: undefined,
         row: 1,
         column: 1
@@ -54,8 +55,8 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
         box: undefined,
         row: 1,
         column: 8
-      }],
-      [{
+      },
+      {
         box: undefined,
         row: 2,
         column: 1
@@ -94,8 +95,8 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
         box: undefined,
         row: 2,
         column: 8
-      }],
-      [{
+      },
+      {
         box: undefined,
         row: 3,
         column: 1
@@ -134,8 +135,8 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
         box: undefined,
         row: 3,
         column: 8
-      }],
-      [{
+      },
+      {
         box: undefined,
         row: 4,
         column: 1
@@ -174,8 +175,8 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
         box: undefined,
         row: 4,
         column: 8
-      }],
-      [{
+      },
+      {
         box: undefined,
         row: 5,
         column: 1
@@ -214,8 +215,8 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
         box: undefined,
         row: 5,
         column: 8
-      }],
-      [{
+      },
+      {
         box: undefined,
         row: 6,
         column: 1
@@ -254,8 +255,8 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
         box: undefined,
         row: 6,
         column: 8
-      }],
-      [{
+      },
+      {
         box: undefined,
         row: 7,
         column: 1
@@ -294,8 +295,8 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
         box: undefined,
         row: 7,
         column: 8
-      }],
-      [{
+      },
+      {
         box: undefined,
         row: 8,
         column: 1
@@ -334,20 +335,22 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
         box: undefined,
         row: 8,
         column: 8
-      }]]
+      }]
+
     }
 
     const { user } = hook.params
-    const game = {
-      userId: user._id,
-      players: [{
+
+    hook.data.userId = user._id,
+    hook.data.players = [{
         userId: user._id,
         name: user.name,
         color: defineColor(),
         score: 0
-      }],
-      board: createBoard()
-    }
+      }]
+
+    hook.data.board = createBoard()
+
     return Promise.resolve(hook);
   };
 };

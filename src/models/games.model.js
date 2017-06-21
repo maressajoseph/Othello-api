@@ -10,13 +10,13 @@ module.exports = function (app) {
     name: { type: String, required: true },
     color: { type: Boolean, required: true },
     score: { type: Number, required: true, default: 0 },
-    userId: { type: Schema.Types.ObjectId, ref: 'user' }
+    userId: { type: Schema.Types.ObjectId, ref: 'users' }
   });
 
   const boxSchema = new Schema({
     box: { type: Boolean, default: undefined },
-    row: { type: Number, required: true },
-    column: { type: Number, required: true }
+    row: { type: Number },
+    column: { type: Number }
   });
 
   const gamesSchema = new Schema({
@@ -26,7 +26,7 @@ module.exports = function (app) {
     winner: { type: Number, required: false },
     draw: { type: Boolean, required: false, default: false },
     turn: { type: Number, required: true, default: 0 },
-    userId: { type: Schema.Types.ObjectId, ref: 'user' },
+    userId: { type: Schema.Types.ObjectId, ref: 'users' },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
   });
