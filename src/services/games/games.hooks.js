@@ -18,6 +18,8 @@ const restrict = [
 
 const createGame = require('../../hooks/create-game');
 
+const joinGame = require('../../hooks/join-game');
+
 module.exports = {
   before: {
     all: [],
@@ -29,8 +31,8 @@ module.exports = {
       associateCurrentUser({ as: 'userId' }),
       createGame()
     ],
-    update: [...restrict],
-    patch: [...restrict],
+    update: [...restrict, joinGame()],
+    patch: [...restrict, joinGame()],
     remove: [...restrict]
   },
 
