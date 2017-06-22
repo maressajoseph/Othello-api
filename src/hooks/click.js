@@ -11,6 +11,9 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
 
     const { user } = hook.params;
 
+    const boxNumber  = hook.data.click
+
+
 
     return hook.app.service('games').get(hook.id)
       .then((game) => {
@@ -22,18 +25,28 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
         if (!hasTurn) {
           throw new errors.Unprocessable('It is not your turn')
         }
-        console.log(turn);
 
         const newBoard = board.map((b,i) => {
-          if (i === hook.data.click && turn === 0) {
+          if (i === boxNumber && turn === 0) {
             return Object.assign({}, b, { box: true });
           }
-          else if (i === hook.data.click && turn === 1) {
+          else if (i === boxNumber && turn === 1) {
             return Object.assign({}, b, { box: false });
           }
           return b;
-
         });
+
+        // const updateBoard = board.map((box) => {
+        //   if (board[boxNumber+1].box === false && board[boxNumber+2].box === true) && (turn === 0) {
+        //     return Object.assign({}, box+1, { box: true });
+        //   }
+        //   else if (i === boxNumber && turn === 1) {
+        //     return Object.assign({}, b, { box: false });
+        //   }
+        //   return b;
+        //
+        // });
+
 
         let newTurn = turn + 1;
         if (newTurn === 2) newTurn = 0;
@@ -41,6 +54,8 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
 
 
         hook.data.board = newBoard;
+
+
 
 
         //colors need to be changed when closed in
