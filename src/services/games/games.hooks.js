@@ -20,6 +20,8 @@ const createGame = require('../../hooks/create-game');
 
 const joinGame = require('../../hooks/join-game');
 
+const click = require('../../hooks/click');
+
 module.exports = {
   before: {
     all: [],
@@ -31,8 +33,8 @@ module.exports = {
       associateCurrentUser({ as: 'userId' }),
       createGame()
     ],
-    update: [...restrict, joinGame()],
-    patch: [...restrict, joinGame()],
+    update: [...restrict, joinGame(), click()],
+    patch: [...restrict, joinGame(), click()],
     remove: [...restrict]
   },
 

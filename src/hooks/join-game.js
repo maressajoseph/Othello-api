@@ -8,6 +8,7 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
     if (hook.data.join === undefined) return Promise.resolve(hook);
 
        const { user } = hook.params;
+       console.log(hook.params)
 
        // see if player already present
        return hook.app.service('games').get(hook.id)
