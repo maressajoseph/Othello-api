@@ -6,12 +6,11 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
   return function (hook) {
     // Hooks can either return nothing or a promise
     // that resolves with the `hook` object for asynchronous operations
-    console.log(hook.data)
-    console.log(hook.data.click);
 
     if (hook.data.click === undefined) return Promise.resolve(hook);
 
     const { user } = hook.params;
+
 
     return hook.app.service('games').get(hook.id)
       .then((game) => {
@@ -23,16 +22,26 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
         if (!hasTurn) {
           throw new errors.Unprocessable('It is not your turn')
         }
+        console.log(turn);
 
         const newBoard = board.map((b,i) => {
-          if (i === hook.data.click && user.color === true) {
+          if (i === hook.data.click && turn === 0) {
             return Object.assign({}, b, { box: true });
           }
-          else if (i === hook.data.click && user.color === false) {
+          else if (i === hook.data.click && turn === 1) {
             return Object.assign({}, b, { box: false });
           }
           return b;
+
         });
+
+        let newTurn = turn + 1;
+        if (newTurn === 2) newTurn = 0;
+        hook.data.turn = newTurn;
+
+
+        hook.data.board = newBoard;
+
 
         //colors need to be changed when closed in
 
