@@ -22,7 +22,6 @@ module.exports = function (app) {
   const gamesSchema = new Schema({
     board: [boxSchema],
     players: [playerSchema],
-    started: { type: Boolean, default: false, required: true },
     winner: { type: Number, required: false },
     draw: { type: Boolean, required: false, default: false },
     turn: { type: Number, required: true, default: 0 },
