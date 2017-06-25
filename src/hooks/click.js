@@ -27,11 +27,11 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
 
 
         if (!hasTurn) {
-          throw new errors.Unprocessable('It is not your turn')
+          throw new errors.Unprocessable('It is not your turn!')
         }
 
         if (board[boxNumber].box !== undefined) {
-          throw new errors.Unprocessable('You cannot pick this box, pick another one that does not have a color yet')
+          throw new errors.Unprocessable('Pick another box that does not have a color yet!')
         }
         //horizontal
         if (boxNumber === 0 || boxNumber === 8 || boxNumber === 16 || boxNumber === 24 || boxNumber === 32 || boxNumber === 40 || boxNumber === 48 || boxNumber === 56) {
