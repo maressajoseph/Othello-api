@@ -19,9 +19,9 @@
       "header": {
         "type": "access"
       },
-      "audience": "https://yourdomain.com",
+      "audience": "https://othello-api.herokuapp.com",
       "subject": "anonymous",
-      "issuer": "feathers",
+      "issuer": "othello-api",
       "algorithm": "HS256",
       "expiresIn": "1d"
     },
