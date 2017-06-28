@@ -1227,7 +1227,9 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
           else if (pinkBoxes.length === greenBoxes.length) {
             hook.data.draw = true
           }
-          hook.data.winner = 1
+          else {
+            hook.data.winner = 1
+          }
         }
 
         });
