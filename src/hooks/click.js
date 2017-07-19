@@ -404,8 +404,8 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
 
         //vertical
         if (boxNumber === 0 || boxNumber === 1 || boxNumber === 2 || boxNumber === 3 || boxNumber === 4 || boxNumber === 5 || boxNumber === 6 || boxNumber === 7) {
-          if (board[boxNumber+8].box === false && turn === 0 && board[boxNumber+2].box === true) {var v = boxNumber+8}
-          if (board[boxNumber+8].box === true && turn === 1 && board[boxNumber+2].box === false) {var v = boxNumber+8}
+          if (board[boxNumber+8].box === false && turn === 0 && board[boxNumber+16].box === true) {var v = boxNumber+8}
+          if (board[boxNumber+8].box === true && turn === 1 && board[boxNumber+16].box === false) {var v = boxNumber+8}
           if (board[boxNumber+8].box === false && board[boxNumber+16].box === false && turn === 0 && board[boxNumber+24].box === true) {
             var v = boxNumber+8
             var vv = boxNumber+16
@@ -771,157 +771,157 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
           }
         }
 
-        //diagonal /
+        //diagonal /right
         if (boxNumber === 16 || boxNumber === 61 || boxNumber === 17 || boxNumber === 18 || boxNumber === 19 || boxNumber === 20 || boxNumber === 21 || boxNumber === 29 || boxNumber === 37 || boxNumber === 45 || boxNumber === 53 || boxNumber === 24 || boxNumber === 24 || boxNumber === 25 || boxNumber === 32 || boxNumber === 40 || boxNumber === 33 || boxNumber === 26 || boxNumber === 48 || boxNumber === 41 || boxNumber === 34 || boxNumber === 27 || boxNumber === 56 || boxNumber === 49 || boxNumber === 42 || boxNumber === 35 || boxNumber === 28 || boxNumber === 57 || boxNumber === 50 || boxNumber === 43 || boxNumber === 36 || boxNumber === 58 || boxNumber === 51 || boxNumber === 44 || boxNumber === 59 || boxNumber === 52 || boxNumber === 60) {
-          if (board[boxNumber-7].box === false && turn === 0 && board[boxNumber-14].box === true) {var d = boxNumber-7}
-          if (board[boxNumber-7].box === true && turn === 1 && board[boxNumber-14].box === false) {var d = boxNumber-7}
+          if (board[boxNumber-7].box === false && turn === 0 && board[boxNumber-14].box === true) {var dr = boxNumber-7}
+          if (board[boxNumber-7].box === true && turn === 1 && board[boxNumber-14].box === false) {var dr = boxNumber-7}
         }
         if (boxNumber === 2 || boxNumber === 47 || boxNumber === 3 || boxNumber === 4 || boxNumber === 5 || boxNumber === 6 || boxNumber === 7 || boxNumber === 15 || boxNumber === 23 || boxNumber === 31 || boxNumber === 39 || boxNumber === 10 || boxNumber === 11 || boxNumber === 12 || boxNumber === 13 || boxNumber === 14 || boxNumber === 22 || boxNumber === 30 || boxNumber === 38 || boxNumber === 46 || boxNumber === 18 || boxNumber === 19 || boxNumber === 20 || boxNumber === 21 || boxNumber === 29 || boxNumber === 37 || boxNumber === 45 || boxNumber === 44 || boxNumber === 36 || boxNumber === 28 || boxNumber === 27 || boxNumber === 26 || boxNumber === 34 || boxNumber === 35 || boxNumber === 43 || boxNumber === 42) {
-          if (board[boxNumber+7].box === false && turn === 0 && board[boxNumber+14].box === true) {var d = boxNumber+7}
-          if (board[boxNumber+7].box === true && turn === 1 && board[boxNumber+14].box === false) {var d = boxNumber+7}
+          if (board[boxNumber+7].box === false && turn === 0 && board[boxNumber+14].box === true) {var dr = boxNumber+7}
+          if (board[boxNumber+7].box === true && turn === 1 && board[boxNumber+14].box === false) {var dr = boxNumber+7}
         }
         if (boxNumber === 24 || boxNumber === 32 || boxNumber === 40 || boxNumber === 48 || boxNumber === 56 || boxNumber === 57 || boxNumber === 58 || boxNumber === 59 || boxNumber === 60 || boxNumber === 25 || boxNumber === 26 || boxNumber === 27 || boxNumber === 28 || boxNumber === 36 || boxNumber === 44 || boxNumber === 52 || boxNumber === 33 || boxNumber === 41 || boxNumber === 49 || boxNumber === 50 || boxNumber === 51 || boxNumber === 34 || boxNumber === 42 || boxNumber === 35 || boxNumber === 43) {
           if (board[boxNumber-7].box === false && board[boxNumber-14].box === false && turn === 0 && board[boxNumber-21].box === true) {
-            var d = boxNumber-7
-            var dd = boxNumber-14
+            var dr = boxNumber-7
+            var ddr = boxNumber-14
           }
           if (board[boxNumber-7].box === true && board[boxNumber-14].box === true && turn === 1 && board[boxNumber-21].box === false) {
-            var d = boxNumber-7
-            var dd = boxNumber-14
+            var dr = boxNumber-7
+            var ddr = boxNumber-14
           }
         }
         if (boxNumber === 3 || boxNumber === 4 || boxNumber === 5 || boxNumber === 6 || boxNumber === 7 || boxNumber === 15 || boxNumber === 23 || boxNumber === 31 || boxNumber === 39 || boxNumber === 11 || boxNumber === 12 || boxNumber === 13 || boxNumber === 14 || boxNumber === 22 || boxNumber === 30 || boxNumber === 38 || boxNumber === 37 || boxNumber === 29 || boxNumber === 21 || boxNumber === 20 || boxNumber === 19 || boxNumber === 27 || boxNumber === 28 || boxNumber === 36 || boxNumber === 35) {
           if (board[boxNumber+7].box === false && board[boxNumber+14].box === false && turn === 0 && board[boxNumber+21].box === true) {
-            var d = boxNumber+7
-            var dd = boxNumber+14
+            var dr = boxNumber+7
+            var ddr = boxNumber+14
           }
           if (board[boxNumber+7].box === true && board[boxNumber+14].box === true && turn === 1 && board[boxNumber+21].box === false) {
-            var d = boxNumber+7
-            var dd = boxNumber+14
+            var dr = boxNumber+7
+            var ddr = boxNumber+14
           }
         }
         if (boxNumber === 32 || boxNumber === 40 || boxNumber === 48 || boxNumber === 56 || boxNumber === 57 || boxNumber === 58 || boxNumber === 59 || boxNumber === 51 || boxNumber === 50 || boxNumber === 49 || boxNumber === 41 || boxNumber === 33 || boxNumber === 34 || boxNumber === 42 || boxNumber === 43 || boxNumber === 35) {
           if (board[boxNumber-7].box === false && board[boxNumber-14].box === false && board[boxNumber-21].box === false && turn === 0 && board[boxNumber-28].box === true) {
-            var d = boxNumber-7
-            var dd = boxNumber-14
-            var ddd = boxNumber-21
+            var dr = boxNumber-7
+            var ddr = boxNumber-14
+            var dddr = boxNumber-21
           }
           if (board[boxNumber-7].box === true && board[boxNumber-14].box === true && board[boxNumber-21].box === true && turn === 1 && board[boxNumber-28].box === false) {
-            var d = boxNumber-7
-            var dd = boxNumber-14
-            var ddd = boxNumber-21
+            var dr = boxNumber-7
+            var ddr = boxNumber-14
+            var dddr = boxNumber-21
           }
         }
         if (boxNumber === 4 || boxNumber === 12 || boxNumber === 20 || boxNumber === 28 || boxNumber === 29 || boxNumber === 30 || boxNumber === 31 || boxNumber === 5 || boxNumber === 13 || boxNumber === 21 || boxNumber === 22 || boxNumber === 23 || boxNumber === 6 || boxNumber === 14 || boxNumber === 15 || boxNumber === 7) {
           if (board[boxNumber+7].box === false && board[boxNumber+14].box === false && board[boxNumber+21].box === false && turn === 0 && board[boxNumber+28].box === true) {
-            var d = boxNumber+7
-            var dd = boxNumber+14
-            var ddd = boxNumber+21
+            var dr = boxNumber+7
+            var ddr = boxNumber+14
+            var dddr = boxNumber+21
           }
           if (board[boxNumber+7].box === true && board[boxNumber+14].box === true && board[boxNumber+21].box === true && turn === 1 && board[boxNumber+28].box === false) {
-            var d = boxNumber+7
-            var dd = boxNumber+14
-            var ddd = boxNumber+21
+            var dr = boxNumber+7
+            var ddr = boxNumber+14
+            var dddr = boxNumber+21
           }
         }
         if (boxNumber === 40 || boxNumber === 41 || boxNumber === 42 || boxNumber === 50 || boxNumber === 58 || boxNumber === 57 || boxNumber === 56 || boxNumber === 48 || boxNumber === 49) {
           if (board[boxNumber-7].box === false && board[boxNumber-14].box === false && board[boxNumber-21].box === false && board[boxNumber-28].box === false && turn === 0 && board[boxNumber-35].box === true) {
-            var d = boxNumber-7
-            var dd = boxNumber-14
-            var ddd = boxNumber-21
-            var dddd = boxNumber-28
+            var dr = boxNumber-7
+            var ddr = boxNumber-14
+            var dddr = boxNumber-21
+            var ddddr = boxNumber-28
           }
           if (board[boxNumber-7].box === true && board[boxNumber-14].box === true && board[boxNumber-21].box === true && board[boxNumber-28].box === true && turn === 1 && board[boxNumber-35].box === false) {
-            var d = boxNumber-7
-            var dd = boxNumber-14
-            var ddd = boxNumber-21
-            var dddd = boxNumber-28
+            var dr = boxNumber-7
+            var ddr = boxNumber-14
+            var dddr = boxNumber-21
+            var ddddr = boxNumber-28
           }
         }
         if (boxNumber === 5 || boxNumber === 13 || boxNumber === 21 || boxNumber === 22 || boxNumber === 23 || boxNumber === 6 || boxNumber === 14 || boxNumber === 15 || boxNumber === 7) {
           if (board[boxNumber+7].box === false && board[boxNumber+14].box === false && board[boxNumber+21].box === false && board[boxNumber+28].box === false && turn === 0 && board[boxNumber+35].box === true) {
-            var d = boxNumber+7
-            var dd = boxNumber+14
-            var ddd = boxNumber+21
-            var dddd = boxNumber+28
+            var dr = boxNumber+7
+            var ddr = boxNumber+14
+            var dddr = boxNumber+21
+            var ddddr = boxNumber+28
           }
           if (board[boxNumber+7].box === true && board[boxNumber+14].box === true && board[boxNumber+21].box === true && board[boxNumber+28].box === true && turn === 1 && board[boxNumber+35].box === false) {
-            var d = boxNumber+7
-            var dd = boxNumber+14
-            var ddd = boxNumber+21
-            var dddd = boxNumber+28
+            var dr = boxNumber+7
+            var ddr = boxNumber+14
+            var dddr = boxNumber+21
+            var ddddr = boxNumber+28
           }
         }
         if (boxNumber === 48 || boxNumber === 49 || boxNumber === 57 || boxNumber === 56) {
           if (board[boxNumber-7].box === false && board[boxNumber-14].box === false && board[boxNumber-21].box === false && board[boxNumber-28].box === false && board[boxNumber-35].box === false && turn === 0 && board[boxNumber-42].box === true) {
-            var d = boxNumber-7
-            var dd = boxNumber-14
-            var ddd = boxNumber-21
-            var dddd = boxNumber-28
-            var ddddd = boxNumber-35
+            var dr = boxNumber-7
+            var ddr = boxNumber-14
+            var dddr = boxNumber-21
+            var ddddr = boxNumber-28
+            var dddddr = boxNumber-35
           }
           if (board[boxNumber-7].box === true && board[boxNumber-14].box === true && board[boxNumber-21].box === true && board[boxNumber-28].box === true && board[boxNumber-35].box === true && turn === 1 && board[boxNumber-42].box === false) {
-            var d = boxNumber-7
-            var dd = boxNumber-14
-            var ddd = boxNumber-21
-            var dddd = boxNumber-28
-            var ddddd = boxNumber-35
+            var dr = boxNumber-7
+            var ddr = boxNumber-14
+            var dddr = boxNumber-21
+            var ddddr = boxNumber-28
+            var dddddr = boxNumber-35
           }
         }
         if (boxNumber === 6 || boxNumber === 14 || boxNumber === 15 || boxNumber === 7) {
           if (board[boxNumber+7].box === false && board[boxNumber+14].box === false && board[boxNumber+21].box === false && board[boxNumber+28].box === false && board[boxNumber+35].box === false && turn === 0 && board[boxNumber+42].box === true) {
-            var d = boxNumber+7
-            var dd = boxNumber+14
-            var ddd = boxNumber+21
-            var dddd = boxNumber+28
-            var ddddd = boxNumber+35
+            var dr = boxNumber+7
+            var ddr = boxNumber+14
+            var dddr = boxNumber+21
+            var ddddr = boxNumber+28
+            var dddddr = boxNumber+35
           }
           if (board[boxNumber+7].box === true && board[boxNumber+14].box === true && board[boxNumber+21].box === true && board[boxNumber+28].box === true && board[boxNumber+35].box === true && turn === 1 && board[boxNumber+42].box === false) {
-            var d = boxNumber+7
-            var dd = boxNumber+14
-            var ddd = boxNumber+21
-            var dddd = boxNumber+28
-            var ddddd = boxNumber+35
+            var dr = boxNumber+7
+            var ddr = boxNumber+14
+            var dddr = boxNumber+21
+            var ddddr = boxNumber+28
+            var dddddr = boxNumber+35
           }
         }
         if (boxNumber === 56) {
           if (board[boxNumber-7].box === false && board[boxNumber-14].box === false && board[boxNumber-21].box === false && board[boxNumber-28].box === false && board[boxNumber-35].box === false && board[boxNumber-42].box === false && turn === 0 && board[boxNumber-49].box === true) {
-            var d = boxNumber-7
-            var dd = boxNumber-14
-            var ddd = boxNumber-21
-            var dddd = boxNumber-28
-            var ddddd = boxNumber-35
-            var dddddd = boxNumber-42
+            var dr = boxNumber-7
+            var ddr = boxNumber-14
+            var dddr = boxNumber-21
+            var ddddr = boxNumber-28
+            var dddddr = boxNumber-35
+            var ddddddr = boxNumber-42
           }
           if (board[boxNumber-7].box === true && board[boxNumber-14].box === true && board[boxNumber-21].box === true && board[boxNumber-28].box === true && board[boxNumber-35].box === true && board[boxNumber-42].box === true && turn === 1 && board[boxNumber-49].box === false) {
-            var d = boxNumber-7
-            var dd = boxNumber-14
-            var ddd = boxNumber-21
-            var dddd = boxNumber-28
-            var ddddd = boxNumber-35
-            var dddddd = boxNumber-42
+            var dr = boxNumber-7
+            var ddr = boxNumber-14
+            var dddr = boxNumber-21
+            var ddddr = boxNumber-28
+            var dddddr = boxNumber-35
+            var ddddddr = boxNumber-42
           }
         }
         if (boxNumber === 7) {
           if (board[boxNumber+7].box === false && board[boxNumber+14].box === false && board[boxNumber+21].box === false && board[boxNumber+28].box === false && board[boxNumber+35].box === false && board[boxNumber+42].box === false && turn === 0 && board[boxNumber+49].box === true) {
-            var d = boxNumber+7
-            var dd = boxNumber+14
-            var ddd = boxNumber+21
-            var dddd = boxNumber+28
-            var ddddd = boxNumber+35
-            var dddddd = boxNumber+42
+            var dr = boxNumber+7
+            var ddr = boxNumber+14
+            var dddr = boxNumber+21
+            var ddddr = boxNumber+28
+            var dddddr = boxNumber+35
+            var ddddddr = boxNumber+42
           }
           if (board[boxNumber+7].box === true && board[boxNumber+14].box === true && board[boxNumber+21].box === true && board[boxNumber+28].box === true && board[boxNumber+35].box === true && board[boxNumber+42].box === true && turn === 1 && board[boxNumber+49].box === false) {
-            var d = boxNumber+7
-            var dd = boxNumber+14
-            var ddd = boxNumber+21
-            var dddd = boxNumber+28
-            var ddddd = boxNumber+35
-            var dddddd = boxNumber+42
+            var dr = boxNumber+7
+            var ddr = boxNumber+14
+            var dddr = boxNumber+21
+            var ddddr = boxNumber+28
+            var dddddr = boxNumber+35
+            var ddddddr = boxNumber+42
           }
         }
 
-        //diagonal \
+        //diagonal \left
         if (boxNumber === 23 || boxNumber === 22 || boxNumber === 21 || boxNumber === 20 || boxNumber === 19 || boxNumber === 18 || boxNumber === 26 || boxNumber === 34 || boxNumber === 42 || boxNumber === 50 || boxNumber === 58 || boxNumber === 31 || boxNumber === 30 || boxNumber === 29 || boxNumber === 28 || boxNumber === 27 || boxNumber === 35 || boxNumber === 43 || boxNumber === 51 || boxNumber === 59 || boxNumber === 39 || boxNumber === 38 || boxNumber === 37 || boxNumber === 36 || boxNumber === 44 || boxNumber === 52 || boxNumber === 60 || boxNumber === 47 || boxNumber === 46 || boxNumber === 45 || boxNumber === 53 || boxNumber === 61 || boxNumber === 55 || boxNumber === 54 || boxNumber === 62 || boxNumber === 63) {
           if (board[boxNumber-9].box === false && turn === 0 && board[boxNumber-18].box === true) {var d = boxNumber-9}
           if (board[boxNumber-9].box === true && turn === 1 && board[boxNumber-18].box === false) {var d = boxNumber-9}
@@ -1074,9 +1074,6 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
 
 
         const newBoard = board.map((b,i) => {
-          var r = board[boxNumber].row
-          var c = board[boxNumber].column
-
           if (i === boxNumber && turn === 0) {
             return Object.assign({}, b, { box: true });
           }
@@ -1189,6 +1186,42 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
             return Object.assign({}, b, { box: true });
           }
           if (i === dddddd && turn === 1) {
+            return Object.assign({}, b, { box: false });
+          }
+          if (i === dr && turn === 0) {
+            return Object.assign({}, b, { box: true });
+          }
+          if (i === dr && turn === 1) {
+            return Object.assign({}, b, { box: false });
+          }
+          if (i === ddr && turn === 0) {
+            return Object.assign({}, b, { box: true });
+          }
+          if (i === ddr && turn === 1) {
+            return Object.assign({}, b, { box: false });
+          }
+          if (i === dddr && turn === 0) {
+            return Object.assign({}, b, { box: true });
+          }
+          if (i === dddr && turn === 1) {
+            return Object.assign({}, b, { box: false });
+          }
+          if (i === ddddr && turn === 0) {
+            return Object.assign({}, b, { box: true });
+          }
+          if (i === ddddr && turn === 1) {
+            return Object.assign({}, b, { box: false });
+          }
+          if (i === dddddr && turn === 0) {
+            return Object.assign({}, b, { box: true });
+          }
+          if (i === dddddr && turn === 1) {
+            return Object.assign({}, b, { box: false });
+          }
+          if (i === ddddddr && turn === 0) {
+            return Object.assign({}, b, { box: true });
+          }
+          if (i === ddddddr && turn === 1) {
             return Object.assign({}, b, { box: false });
           }
           return b;
